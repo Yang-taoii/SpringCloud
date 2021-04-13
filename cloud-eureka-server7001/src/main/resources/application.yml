@@ -10,3 +10,6 @@ eureka:
     service-url:
       #设置与Eureka server 交互的地址查询服务与注册服务都需要依赖这个地址
       defaultZone: http://eureka7002.com:7002/eureka
+  #server:
+    #eviction-interval-timer-in-ms: 60000 #保证不可用的微服务的时间
+    #enable-self-preservation: false  #关闭eureka的自我保护机制,保证不可用的微服务能够被及时剔除

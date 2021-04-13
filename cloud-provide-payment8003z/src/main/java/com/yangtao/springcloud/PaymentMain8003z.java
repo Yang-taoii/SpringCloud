@@ -2,18 +2,18 @@ package com.yangtao.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author：杨涛
- * @create: 2021-04-08 14:29
+ * @create: 2021-04-12 17:59
  */
-@SpringBootApplication
-@EnableEurekaClient
+
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableDiscoveryClient
-public class PaymentMain8001 {
+public class PaymentMain8003z {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8001.class,args);
+        SpringApplication.run(PaymentMain8003z.class,args);
     }
 }
