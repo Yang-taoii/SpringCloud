@@ -1,22 +1,21 @@
 package com.yangtao.springcloud;
 
-import com.yangtao.myrule.MySelfRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 /**
  * @author：杨涛
- * @create: 2021-04-09 09:01
+ * @create: 2021-04-19 10:55
  */
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableEurekaClient
-@RibbonClient(name = "cloud-payment-service",configuration = MySelfRule.class)
-public class OrderMain80 {
+@EnableCircuitBreaker //配置服务降级时需要开启此注解
+public class PaymentHystrixMain8001 {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class,args);
+        SpringApplication.run(PaymentHystrixMain8001.class,args);
     }
 }
