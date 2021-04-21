@@ -31,7 +31,7 @@ public class PaymentController {
     private DiscoveryClient discoveryClient;
 
 
-    @RequestMapping("/getOne/{id}")
+    @RequestMapping("/payment/getOne/{id}")
     public CommonResult<Payment> getOne(@PathVariable("id") Integer id){
         Payment byId = service.getById(id);
         if (byId != null){
@@ -42,7 +42,7 @@ public class PaymentController {
     }
 
 
-    @RequestMapping("/add")
+    @RequestMapping("/payment/add")
     public CommonResult add(@RequestBody Payment payment){
         int add = service.add(payment);
         if (add>0){

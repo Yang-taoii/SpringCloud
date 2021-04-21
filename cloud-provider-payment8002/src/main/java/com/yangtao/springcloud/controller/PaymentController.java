@@ -29,7 +29,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @RequestMapping("/getOne/{id}")
+    @RequestMapping("/payment/getOne/{id}")
     public CommonResult<Payment> getOne(@PathVariable("id") Integer id){
         Payment byId = service.getById(id);
         if (byId != null){
